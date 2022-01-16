@@ -6,6 +6,10 @@ public class SelectedTileActions : MonoBehaviour
 {
     public GameObject selectedTile;
 
+    [SerializeField]
+    private GameObject housePrefab, fieldPrefab, forestPrefab, millPrefab;
+    public float prefabYOffset = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +37,18 @@ public class SelectedTileActions : MonoBehaviour
         if(selectedTile!=null)
         {
             selectedTile.GetComponent<F_Tile>().TileDeSelected();
+            PlaceItem();
         }
         selectedTile = null;
+    }
+
+    public void PlaceItem()
+    {
+        if(selectedTile!=null)
+        {
+            Vector3 pos = selectedTile.GetComponent<F_Tile>().gameObject.transform.position;
+            pos.y = prefabYOffset;
+            selectedTile.GetComponent<F_Tile>().constructedOb = Instantiate(fieldPrefab, position: pos, selectedTile.GetComponent<F_Tile>().gameObject.transform.rotation);
+        }
     }
 }

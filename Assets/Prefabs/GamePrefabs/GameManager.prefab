@@ -73,6 +73,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTile: {fileID: 0}
+  housePrefab: {fileID: 4501344160347691747, guid: 336610251977555459faf773bbb64151,
+    type: 3}
+  fieldPrefab: {fileID: 1771882021542729410, guid: 6062cf0f839c34a4d8877befd13ec026,
+    type: 3}
+  forestPrefab: {fileID: 4760894338683306536, guid: 532019a89bfe670439351cc40095d1d5,
+    type: 3}
+  millPrefab: {fileID: 8276501216198476067, guid: d1cf085091329394b99cf35e46dbef3f,
+    type: 3}
+  prefabYOffset: 1
 --- !u!114 &2098210691568510594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,3 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40780735cca5834b9a2816ef1726b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  landTileCount: 0
+  waterTileCount: 0
+  forestTileCount: 0
+  waterPollutionAmount: 0
+  landPollutionAmount: 0
+  airPollutionAmount: 0

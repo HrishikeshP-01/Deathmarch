@@ -8,6 +8,7 @@ public class F_Tile : MonoBehaviour
     public Material[] hovered, selected;
     bool isSelected;
     public GameObject gameController;
+    public GameObject constructedOb;
 
     private Material[] notSelected;
 
@@ -17,7 +18,6 @@ public class F_Tile : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         notSelected = rend.materials;
-
     }
 
     void OnMouseEnter()
