@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ObjectImpact : MonoBehaviour
 {
-    [Header("Pollution Impact")]
-    public float airPperCycle = 0, waterPperCycle = 0, landPperCycle = 0;
-    [Header("Establishment Thresholds")]
+    [Header("Impact on Environment")]
     public float airQuality = 0, waterQuality = 0, landQuality = 0;
     [Header("Human Impact")]
     public float foodPts = 0, economyPts = 0;

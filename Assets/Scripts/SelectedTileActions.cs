@@ -45,10 +45,11 @@ public class SelectedTileActions : MonoBehaviour
     public void PlaceItem(GameObject selected)
     {
         selectedPrefab = selected;
-        if (selectedTile!=null && selectedTile.GetComponent<F_Tile>().constructedOb == null)
+        if (selectedTile!=null)
         {
             Vector3 pos = selectedTile.GetComponent<F_Tile>().gameObject.transform.position;
             pos.y = prefabYOffset;
+            Destroy(selectedTile.GetComponent<F_Tile>().constructedOb);
             selectedTile.GetComponent<F_Tile>().constructedOb = Instantiate(selectedPrefab, position: pos, selectedTile.GetComponent<F_Tile>().gameObject.transform.rotation);
 
             Debug.Log("Done");

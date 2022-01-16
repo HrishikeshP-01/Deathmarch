@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 47898313749864990}
   - component: {fileID: 7761690461233980068}
   m_Layer: 0
-  m_Name: farm_plot
-  m_TagString: Untagged
+  m_Name: FarmPrefab
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,12 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07df82e62be6ce1488a4b3d4356494b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airPperCycle: -5
-  waterPperCycle: 2.5
-  landPperCycle: 0
-  airQuality: 30
-  waterQuality: 40
-  landQuality: 40
+  airQuality: 5
+  waterQuality: -5
+  landQuality: -5
+  foodPts: 10
+  economyPts: 5
 --- !u!1 &8696377951186812516
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class F_Tile : MonoBehaviour
 
     private Material[] notSelected;
 
-    public float waterPollution = 0, landPollution = 0, airPollution = 0;
+    public float waterQuality = 100, landQuality = 100, airQuality = 100;
 
     private void Start()
     {

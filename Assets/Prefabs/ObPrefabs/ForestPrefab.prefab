@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6498357955819288308}
   - component: {fileID: 3545446966029156515}
   m_Layer: 0
-  m_Name: forest
-  m_TagString: Untagged
+  m_Name: ForestPrefab
+  m_TagString: Forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,9 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07df82e62be6ce1488a4b3d4356494b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airPperCycle: -10
-  waterPperCycle: -5
-  landPperCycle: -5
-  airQuality: 70
-  waterQuality: 50
-  landQuality: 50
+  airQuality: 30
+  waterQuality: 10
+  landQuality: 10
+  foodPts: 0
+  economyPts: 0

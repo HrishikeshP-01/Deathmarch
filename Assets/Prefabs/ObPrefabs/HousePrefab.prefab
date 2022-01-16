@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2759346091779403327}
   - component: {fileID: 5572661089160325039}
   m_Layer: 0
-  m_Name: house
-  m_TagString: Untagged
+  m_Name: HousePrefab
+  m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,9 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07df82e62be6ce1488a4b3d4356494b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airPperCycle: 5
-  waterPperCycle: 5
-  landPperCycle: 5
-  airQuality: 60
-  waterQuality: 30
-  landQuality: 30
+  airQuality: -5
+  waterQuality: -5
+  landQuality: -5
+  foodPts: 0
+  economyPts: 0

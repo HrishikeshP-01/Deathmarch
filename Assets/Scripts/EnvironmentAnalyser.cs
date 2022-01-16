@@ -6,7 +6,7 @@ public class EnvironmentAnalyser : MonoBehaviour
 {
     public float landTileCount = 0, waterTileCount = 0, forestTileCount = 0;
     GameObject[] waterTileList, landTileList, forestTileList;
-    public float waterPollutionAmount = 0, landPollutionAmount = 0, airPollutionAmount = 0;
+    public float waterQualityAmount = 0, landQualityAmount = 0, airQualityAmount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,27 +31,53 @@ public class EnvironmentAnalyser : MonoBehaviour
         forestTileCount = forestTileList.Length;
     }
 
-    public void getPollution()
+    public void getQuality()
     {
-        waterPollutionAmount = 0;
-        landPollutionAmount = 0;
-        airPollutionAmount = 0;
+        waterQualityAmount = 100;
+        landQualityAmount = 100;
+        airQualityAmount = 100;
 
         for(int i=0;i<waterTileList.Length;i++)
         {
-            waterPollutionAmount += waterTileList[i].GetComponent<F_Tile>().waterPollution;
-            Debug.Log(waterPollutionAmount);
-            airPollutionAmount += waterTileList[i].GetComponent<F_Tile>().airPollution;
+            waterQualityAmount += waterTileList[i].GetComponent<F_Tile>().waterQuality;
+            airQualityAmount += waterTileList[i].GetComponent<F_Tile>().airQuality;
         }
+        
         for (int i = 0; i < landTileList.Length; i++)
         {
-            landPollutionAmount += landTileList[i].GetComponent<F_Tile>().landPollution;
-            airPollutionAmount += landTileList[i].GetComponent<F_Tile>().airPollution;
+            landQualityAmount += landTileList[i].GetComponent<F_Tile>().landQuality;
+            airQualityAmount += landTileList[i].GetComponent<F_Tile>().airQuality;
         }
+
         for (int i = 0; i < forestTileList.Length; i++)
         {
-            landPollutionAmount += forestTileList[i].GetComponent<F_Tile>().landPollution;
-            airPollutionAmount += forestTileList[i].GetComponent<F_Tile>().airPollution;
+            landQualityAmount += forestTileList[i].GetComponent<F_Tile>().landQuality;
+            airQualityAmount += forestTileList[i].GetComponent<F_Tile>().airQuality;
+        }
+    }
+
+    public void TotalObjectImpact()
+    {
+        for(int i=0;i<landTileCount;i++)
+        {
+            GameObject ob = landTileList[i].GetComponent<F_Tile>().constructedOb;
+
+            landTileList[i].GetComponent<F_Tile>().airQuality += ob.GetComponent<ObjectImpact>().airQuality;
+            landTileList[i].GetComponent<F_Tile>().waterQuality += ob.GetComponent<ObjectImpact>().waterQuality;
+            landTileList[i].GetComponent<F_Tile>().landQuality += ob.GetComponent<ObjectImpact>().landQuality;
+
+            
+        }
+
+        for (int i = 0; i < forestTileCount; i++)
+        {
+            GameObject ob = forestTileList[i].GetComponent<F_Tile>().constructedOb;
+
+            forestTileList[i].GetComponent<F_Tile>().airQuality += ob.GetComponent<ObjectImpact>().airQuality;
+            forestTileList[i].GetComponent<F_Tile>().waterQuality += ob.GetComponent<ObjectImpact>().waterQuality;
+            forestTileList[i].GetComponent<F_Tile>().landQuality += ob.GetComponent<ObjectImpact>().landQuality;
+
+            // Add flora & fauna params later on
         }
     }
 }

@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 7701397315139630591}
   - component: {fileID: 143524851084221127}
   m_Layer: 0
-  m_Name: mill
-  m_TagString: Untagged
+  m_Name: FactoryPrefab
+  m_TagString: Factory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,9 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07df82e62be6ce1488a4b3d4356494b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airPperCycle: 20
-  waterPperCycle: 20
-  landPperCycle: 20
-  airQuality: 70
-  waterQuality: 70
-  landQuality: 70
+  airQuality: -30
+  waterQuality: -20
+  landQuality: -15
+  foodPts: 0
+  economyPts: 20

@@ -8,13 +8,18 @@ public class Timer : MonoBehaviour
 {
     float currentTime;
     public int startMinutes;
+    public int cycleNo = 0;
     public Text currentTimeText;
+    public Text YearText;
     bool timerActive = false;
+
+    public GameObject controller;
 
     // Start is called before the first frame update
     void Start()
     {
         currentTime = startMinutes * 60;
+        StartTimer();
     }
 
     // Update is called once per frame
@@ -30,7 +35,7 @@ public class Timer : MonoBehaviour
             */
             if(currentTime<=0)
             {
-                timerActive = false;
+                StopTimer();
             }
         }
         // Using System to convert float to time format easily
@@ -41,11 +46,16 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
+        currentTime = startMinutes * 60;
+        cycleNo++;
+        YearText.text = "Year: " + cycleNo.ToString();
         timerActive = true;
     }
 
     public void StopTimer()
     {
         timerActive = false;
+        controller.GetComponent<EnvironmentAnalyser>().TotalObjectImpact();
+        StartTimer();
     }
 }
