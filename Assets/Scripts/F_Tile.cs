@@ -18,6 +18,7 @@ public class F_Tile : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         notSelected = rend.materials;
+
     }
 
     void OnMouseEnter()
