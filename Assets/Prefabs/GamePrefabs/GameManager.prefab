@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 905887145620429613}
   - component: {fileID: 905887145620429615}
   - component: {fileID: 2098210691568510594}
+  - component: {fileID: -7798416661892523515}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -73,14 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTile: {fileID: 0}
-  housePrefab: {fileID: 4501344160347691747, guid: 336610251977555459faf773bbb64151,
-    type: 3}
-  farmPrefab: {fileID: 1771882021542729410, guid: 6062cf0f839c34a4d8877befd13ec026,
-    type: 3}
-  forestPrefab: {fileID: 4760894338683306536, guid: 532019a89bfe670439351cc40095d1d5,
-    type: 3}
-  factoryPrefab: {fileID: 8276501216198476067, guid: d1cf085091329394b99cf35e46dbef3f,
-    type: 3}
   selectedPrefab: {fileID: 0}
   prefabYOffset: 1
 --- !u!114 &2098210691568510594
@@ -101,3 +94,24 @@ MonoBehaviour:
   waterPollutionAmount: 0
   landPollutionAmount: 0
   airPollutionAmount: 0
+--- !u!114 &-7798416661892523515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905887145620429778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900697baaae005f4d8f9cd55da1e4b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  housePrefab: {fileID: 4501344160347691747, guid: 336610251977555459faf773bbb64151,
+    type: 3}
+  farmPrefab: {fileID: 1771882021542729410, guid: 6062cf0f839c34a4d8877befd13ec026,
+    type: 3}
+  forestPrefab: {fileID: 4760894338683306536, guid: 532019a89bfe670439351cc40095d1d5,
+    type: 3}
+  factoryPrefab: {fileID: 8276501216198476067, guid: d1cf085091329394b99cf35e46dbef3f,
+    type: 3}
+  selectedPrefab: {fileID: 0}

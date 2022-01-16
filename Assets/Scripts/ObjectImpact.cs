@@ -8,4 +8,6 @@ public class ObjectImpact : MonoBehaviour
     public float airPperCycle = 0, waterPperCycle = 0, landPperCycle = 0;
     [Header("Establishment Thresholds")]
     public float airQuality = 0, waterQuality = 0, landQuality = 0;
+    [Header("Human Impact")]
+    public float foodPts = 0, economyPts = 0;
 }

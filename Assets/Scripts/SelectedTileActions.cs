@@ -5,9 +5,8 @@ using UnityEngine;
 public class SelectedTileActions : MonoBehaviour
 {
     public GameObject selectedTile;
+    public GameObject selectedPrefab;
 
-    [SerializeField]
-    private GameObject housePrefab, farmPrefab, forestPrefab, factoryPrefab, selectedPrefab;
     public float prefabYOffset = 1.0f;
 
     // Start is called before the first frame update
@@ -39,15 +38,14 @@ public class SelectedTileActions : MonoBehaviour
         {
             selectedTile.GetComponent<F_Tile>().TileDeSelected();
         }
-        PlaceItem();
         selectedTile = null;
         Debug.Log("Deselected");
     }
 
-    public void PlaceItem()
+    public void PlaceItem(GameObject selected)
     {
-        Debug.Log(selectedTile);
-        if (selectedTile!=null)
+        selectedPrefab = selected;
+        if (selectedTile!=null && selectedTile.GetComponent<F_Tile>().constructedOb == null)
         {
             Vector3 pos = selectedTile.GetComponent<F_Tile>().gameObject.transform.position;
             pos.y = prefabYOffset;
@@ -55,25 +53,5 @@ public class SelectedTileActions : MonoBehaviour
 
             Debug.Log("Done");
         }
-    }
-
-    public void setSelectedPrefab(string ch)
-    {
-        switch (ch)
-        {
-            case "Forest":
-                selectedPrefab = forestPrefab;
-                break;
-            case "House":
-                selectedPrefab = housePrefab;
-                break;
-            case "Farm":
-                selectedPrefab = farmPrefab;
-                break;
-            case "Factory":
-                selectedPrefab = factoryPrefab;
-                break;
-        }
-        PlaceItem();
     }
 }
