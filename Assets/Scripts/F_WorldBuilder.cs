@@ -48,6 +48,9 @@ public class F_WorldBuilder : MonoBehaviour
                 HexagonalGrid();
                 break;
         }
+
+        // Update tile & tile list count in environment analyser
+        gameObject.GetComponent<EnvironmentAnalyser>().getTileCount();
     }
 
     void ParallelogramGrid()
@@ -146,7 +149,6 @@ public class F_WorldBuilder : MonoBehaviour
         {
             if (x <= tileProbLookUpTable[i])
             {
-                updateTileCount(hexTilePrefabs[i].GetComponent<F_Tile>().tileType);
                 return hexTilePrefabs[i];
             }
         }
@@ -161,23 +163,6 @@ public class F_WorldBuilder : MonoBehaviour
         {
             tot += tileProbs[i];
             tileProbLookUpTable[i] = tot;
-        }
-    }
-
-    void updateTileCount(string tileType)
-    {
-        switch(tileType)
-        {
-            case "Land":
-                landTiles++;
-                break;
-            case "Water":
-                waterTiles++;
-                break;
-            case "Forest":
-                forestTiles++;
-                landTiles++;
-                break;
         }
     }
 }

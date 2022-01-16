@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2385542555158916774}
   m_Layer: 0
   m_Name: SandDetail
-  m_TagString: Untagged
+  m_TagString: Land
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: []
   selected: []
-  tileType: Land
   gameController: {fileID: 905887145620429778, guid: ee2586e432789cf40924c730f9e9a9ea,
     type: 3}

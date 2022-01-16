@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6115442550203484012}
   m_Layer: 0
   m_Name: WaterDetail
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: []
   selected: []
-  tileType: Water
   gameController: {fileID: 905887145620429778, guid: ee2586e432789cf40924c730f9e9a9ea,
     type: 3}
+  waterPollution: 0
+  landPollution: 0
+  airPollution: 0

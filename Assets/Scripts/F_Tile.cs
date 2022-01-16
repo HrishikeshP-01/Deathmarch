@@ -7,12 +7,11 @@ public class F_Tile : MonoBehaviour
     Renderer rend;
     public Material[] hovered, selected;
     bool isSelected;
-    public string tileType;
     public GameObject gameController;
 
     private Material[] notSelected;
 
-    private float waterPollution = 0, landPollution = 0, airPollution = 0;
+    public float waterPollution = 0, landPollution = 0, airPollution = 0;
 
     private void Start()
     {
@@ -60,20 +59,5 @@ public class F_Tile : MonoBehaviour
     {
         isSelected = false;
         rend.materials = notSelected;
-    }
-
-    float GetAirPollution()
-    {
-        return airPollution;
-    }
-
-    float GetLandPollution()
-    {
-        return landPollution;
-    }
-
-    float GetWaterPollution()
-    {
-        return waterPollution;
     }
 }
