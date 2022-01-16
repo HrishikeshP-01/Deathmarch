@@ -22,7 +22,7 @@ public class WorldUI : MonoBehaviour
 
     }
 
-    void UpdateParameters()
+    public void UpdateParameters()
     {
         gameController.GetComponent<EnvironmentAnalyser>().getQuality();
         water.GetComponent<Text>().text = gameController.GetComponent<EnvironmentAnalyser>().waterQualityAmount.ToString();

@@ -14,11 +14,11 @@ public class Timer : MonoBehaviour
     bool timerActive = false;
 
     public GameObject controller;
+    public GameObject UIparams;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = startMinutes * 60;
         StartTimer();
     }
 
@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        currentTime = startMinutes * 60;
+        currentTime = startMinutes * 5;
         cycleNo++;
         YearText.text = "Year: " + cycleNo.ToString();
         timerActive = true;
@@ -56,6 +56,8 @@ public class Timer : MonoBehaviour
     {
         timerActive = false;
         controller.GetComponent<EnvironmentAnalyser>().TotalObjectImpact();
+        controller.GetComponent<EnvironmentAnalyser>().getQuality();
+        UIparams.GetComponent<WorldUI>().UpdateParameters();
         StartTimer();
     }
 }
