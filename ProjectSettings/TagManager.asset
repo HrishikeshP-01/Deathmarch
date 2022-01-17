@@ -10,6 +10,7 @@ TagManager:
   - Factory
   - Farm
   - House
+  - Dummy
   layers:
   - Default
   - TransparentFX

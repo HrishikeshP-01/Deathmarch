@@ -69,6 +69,10 @@ public class EnvironmentAnalyser : MonoBehaviour
         landQualityAmount = Mathf.Clamp(landQualityAmount, 0, 100);
         waterQualityAmount = Mathf.Clamp(waterQualityAmount, 0, 100);
         airQualityAmount = Mathf.Clamp(airQualityAmount, 0, 100);
+        // Truncating to 2 decimal places
+        landQualityAmount = Mathf.Round((landQualityAmount) * 100) / 100;
+        waterQualityAmount = Mathf.Round(waterQualityAmount * 100) / 100;
+        airQualityAmount = Mathf.Round(airQualityAmount * 100) / 100;
 
     }
 
@@ -103,15 +107,18 @@ public class EnvironmentAnalyser : MonoBehaviour
 
             if(ob!=null)
             {
-                forestTileList[i].GetComponent<F_Tile>().airQuality += ob.GetComponent<ObjectImpact>().airQuality;
-                forestTileList[i].GetComponent<F_Tile>().waterQuality += ob.GetComponent<ObjectImpact>().waterQuality;
-                forestTileList[i].GetComponent<F_Tile>().landQuality += ob.GetComponent<ObjectImpact>().landQuality;
-
-                economy += ob.GetComponent<ObjectImpact>().economyPts;
-                food += ob.GetComponent<ObjectImpact>().foodPts;
-                if (ob.tag=="House")
+                if(ob.tag!="Dummy")
                 {
-                    houses++;
+                    forestTileList[i].GetComponent<F_Tile>().airQuality += ob.GetComponent<ObjectImpact>().airQuality;
+                    forestTileList[i].GetComponent<F_Tile>().waterQuality += ob.GetComponent<ObjectImpact>().waterQuality;
+                    forestTileList[i].GetComponent<F_Tile>().landQuality += ob.GetComponent<ObjectImpact>().landQuality;
+
+                    economy += ob.GetComponent<ObjectImpact>().economyPts;
+                    food += ob.GetComponent<ObjectImpact>().foodPts;
+                    if (ob.tag == "House")
+                    {
+                        houses++;
+                    }
                 }
             }
 
