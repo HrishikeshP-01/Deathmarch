@@ -51,6 +51,8 @@ public class F_WorldBuilder : MonoBehaviour
 
         // Update tile & tile list count in environment analyser
         gameObject.GetComponent<EnvironmentAnalyser>().getTileCount();
+        // Populate forest
+        gameObject.GetComponent<EnvironmentAnalyser>().PopulateForests();
     }
 
     void ParallelogramGrid()

@@ -123,7 +123,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103d43d7cb191a149a40bee02d74cbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hovered: []
-  selected: []
+  hovered:
+  - {fileID: 2100000, guid: d7686b94cf26a084992d6fa35968fb87, type: 2}
+  selected:
+  - {fileID: 2100000, guid: ad1f3ce855715fa459a1a25f2f4bd7c7, type: 2}
   gameController: {fileID: 905887145620429778, guid: ee2586e432789cf40924c730f9e9a9ea,
     type: 3}
+  constructedOb: {fileID: 0}
+  waterQuality: 100
+  landQuality: 100
+  airQuality: 100

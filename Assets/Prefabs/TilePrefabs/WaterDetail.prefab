@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3636165131529891487}
   - component: {fileID: 7010637352910180966}
   - component: {fileID: -6999151132668610180}
-  - component: {fileID: 6115442550203484012}
   m_Layer: 0
   m_Name: WaterDetail
   m_TagString: Water
@@ -96,22 +95,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7928346357070837605, guid: 5126f6a0c9ab4d7428a18fd58c83281c, type: 3}
---- !u!114 &6115442550203484012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8752217611877082810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103d43d7cb191a149a40bee02d74cbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hovered: []
-  selected: []
-  gameController: {fileID: 905887145620429778, guid: ee2586e432789cf40924c730f9e9a9ea,
-    type: 3}
-  waterPollution: 0
-  landPollution: 0
-  airPollution: 0

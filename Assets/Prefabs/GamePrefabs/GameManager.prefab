@@ -74,7 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTile: {fileID: 0}
-  selectedPrefab: {fileID: 0}
+  selectedPrefab: {fileID: 4501344160347691747, guid: 336610251977555459faf773bbb64151,
+    type: 3}
   prefabYOffset: 1
 --- !u!114 &2098210691568510594
 MonoBehaviour:
@@ -91,9 +92,13 @@ MonoBehaviour:
   landTileCount: 0
   waterTileCount: 0
   forestTileCount: 0
-  waterPollutionAmount: 0
-  landPollutionAmount: 0
-  airPollutionAmount: 0
+  ForestPrefab: {fileID: 4760894338683306536, guid: 532019a89bfe670439351cc40095d1d5,
+    type: 3}
+  waterQualityAmount: 0
+  landQualityAmount: 0
+  airQualityAmount: 0
+  economy: 0
+  food: 0
 --- !u!114 &-7798416661892523515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,4 +119,5 @@ MonoBehaviour:
     type: 3}
   factoryPrefab: {fileID: 8276501216198476067, guid: d1cf085091329394b99cf35e46dbef3f,
     type: 3}
-  selectedPrefab: {fileID: 0}
+  selectedPrefab: {fileID: 4501344160347691747, guid: 336610251977555459faf773bbb64151,
+    type: 3}
