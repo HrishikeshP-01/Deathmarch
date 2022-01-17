@@ -12,6 +12,7 @@ public class WorldUI : MonoBehaviour
     float house_a = 2, house_r = 2;
     float houseTarget = 1;
     float foodTarget = 1, foodPerHouse = 2;
+    float economyTarget = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class WorldUI : MonoBehaviour
         UpdatePopulationNeeds();
 
         food.GetComponent<Text>().text = gameController.GetComponent<EnvironmentAnalyser>().food.ToString() + " / " + foodTarget.ToString();
-        economy.GetComponent<Text>().text = gameController.GetComponent<EnvironmentAnalyser>().economy.ToString();
+        economy.GetComponent<Text>().text = gameController.GetComponent<EnvironmentAnalyser>().economy.ToString() + " / " + economyTarget.ToString();
         house.GetComponent<Text>().text = gameController.GetComponent<EnvironmentAnalyser>().houses.ToString() + " / " + houseTarget.ToString();
     }
 
@@ -47,5 +48,27 @@ public class WorldUI : MonoBehaviour
     {
         houseTarget += house_r;
         foodTarget = houseTarget * foodPerHouse;
-    }   
+        economyTarget = economyTarget*2;
+    }
+    
+    public bool checkLevelCompletion()
+    {
+        float currentWaterQ = gameController.GetComponent<EnvironmentAnalyser>().waterQualityAmount;
+        float currentLandQ = gameController.GetComponent<EnvironmentAnalyser>().landQualityAmount;
+        float currentAirQ = gameController.GetComponent<EnvironmentAnalyser>().landQualityAmount;
+
+        if (currentAirQ <= 0 || currentLandQ <= 0 || currentWaterQ <= 0)
+            return false;
+        float currentFood = gameController.GetComponent<EnvironmentAnalyser>().food;
+        float currentHouses = gameController.GetComponent<EnvironmentAnalyser>().houses;
+        float currentEconomy = gameController.GetComponent<EnvironmentAnalyser>().economy;
+        if (currentFood < foodTarget || currentHouses < houseTarget || currentEconomy < economyTarget)
+        {
+            Debug.Log(currentFood + " " + currentHouses + " " + currentEconomy);
+            Debug.Log(foodTarget + " " + houseTarget + " " + economyTarget);
+            return false;
+        }
+
+        return true;
+    }
 }

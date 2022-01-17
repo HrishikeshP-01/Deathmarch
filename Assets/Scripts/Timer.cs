@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System; // To use TimeSpan
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     float currentTime;
-    public int startMinutes;
+    public int startMinutes, currentMin;
     public int cycleNo = 0;
     public Text currentTimeText;
     public Text YearText;
     bool timerActive = false;
 
     public GameObject controller;
+    public GameObject GameOverScreen;
+    public GameObject StartGameScreen;
+    public GameObject RedCrossScreen;
     public GameObject UIparams;
+
+    public Text highScore;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentMin = startMinutes;
         StartTimer();
     }
 
@@ -46,7 +53,8 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        currentTime = startMinutes * 5;
+        currentTime = currentMin * 60;
+        currentMin++;
         cycleNo++;
         YearText.text = "Year: " + cycleNo.ToString();
         timerActive = true;
@@ -57,7 +65,45 @@ public class Timer : MonoBehaviour
         timerActive = false;
         controller.GetComponent<EnvironmentAnalyser>().TotalObjectImpact();
         controller.GetComponent<EnvironmentAnalyser>().getQuality();
-        UIparams.GetComponent<WorldUI>().UpdateParameters();
-        StartTimer();
+        if(UIparams.GetComponent<WorldUI>().checkLevelCompletion())
+        {
+            UIparams.GetComponent<WorldUI>().UpdateParameters();
+            StartTimer();
+        }
+        else
+        {
+            GameOverScreen.SetActive(true);
+        }
+    }
+
+    public void ResetTimer()
+    {
+        cycleNo = 0;
+        currentMin = startMinutes;
+    }
+
+    public void continueButtonFn()
+    {
+        GameOverScreen.SetActive(false);
+        StartGameScreen.SetActive(true);
+        highScore.text = "Your highscore is " + cycleNo.ToString() + " Years";
+    }
+
+    public void startGameButtonFn()
+    {
+        StartGameScreen.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void showRedCross()
+    {
+        GameOverScreen.SetActive(false);
+        RedCrossScreen.SetActive(true);
+    }
+
+    public void goBackFromRedCross()
+    {
+        GameOverScreen.SetActive(true);
+        RedCrossScreen.SetActive(false);
     }
 }
