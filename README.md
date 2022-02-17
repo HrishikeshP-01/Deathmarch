@@ -11,9 +11,10 @@ population explosion & pollution has on the environment.
 
 ![parallelogram](/Images/para.png)
 * Rectangular
-![rect](/Images/react.png)
+![rect](/Images/rect.png)
 ## Movable UI
 ![ui](/Images/ui.png)
 ## Final Game
 ![DM](/Images/dm1.png)
 ![DM2](/Images/dm3.png)
+![Click here to watch demo video](https://youtu.be/7gerkPHrcYI)
