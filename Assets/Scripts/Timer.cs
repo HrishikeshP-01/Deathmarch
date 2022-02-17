@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     float currentTime;
-    public int startMinutes, currentMin;
+    public int startSec, currentSec;
     public int cycleNo = 0;
     public Text currentTimeText;
     public Text YearText;
@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentMin = startMinutes;
+        currentSec = startSec;
         StartTimer();
     }
 
@@ -53,8 +53,8 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        currentTime = currentMin * 60;
-        currentMin++;
+        currentTime = currentSec;
+        currentSec+=startSec;
         cycleNo++;
         YearText.text = "Year: " + cycleNo.ToString();
         timerActive = true;
@@ -79,7 +79,7 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         cycleNo = 0;
-        currentMin = startMinutes;
+        currentSec = startSec;
     }
 
     public void continueButtonFn()

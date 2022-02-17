@@ -4995,8 +4995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88df78f2b0718c24cb2b6d6d903d489c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMinutes: 2
-  currentMin: 0
+  startSec: 15
+  currentSec: 0
   cycleNo: 0
   currentTimeText: {fileID: 1825516808}
   YearText: {fileID: 1056335212}
@@ -6195,6 +6195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rows
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 905887145620429613, guid: ee2586e432789cf40924c730f9e9a9ea,
+        type: 3}
+      propertyPath: gridType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 905887145620429778, guid: ee2586e432789cf40924c730f9e9a9ea,
         type: 3}
