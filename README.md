@@ -11,6 +11,7 @@ population explosion & pollution has on the environment.
 
 ![parallelogram](/Images/para.png)
 * Rectangular
+
 ![rect](/Images/rect.png)
 ## Movable UI
 ![ui](/Images/ui.png)
